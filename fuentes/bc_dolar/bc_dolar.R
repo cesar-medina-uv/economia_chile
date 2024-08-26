@@ -1,5 +1,13 @@
 # https://si3.bcentral.cl/Siete/ES/Siete/Cuadro/CAP_ESTADIST_MACRO/MN_EST_MACRO_IV/PEM_TC
 # Principales Estadísticas Macro > Tipo de cambio
+#install.packages("fs")
+#install.packages("readxl")
+#install.packages("lubridate")
+library(lubridate)
+library(readxl)
+library(fs)
+setwd("C:\\Users\\cesar\\OneDrive\\Documentos\\GitHub\\economia_chile\\fuentes")
+
 
 datos_dolar <- fs::dir_info("bc_dolar") |> 
   filter(str_detect(path, "xls")) |> 
