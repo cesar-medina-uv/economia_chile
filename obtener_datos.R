@@ -5,6 +5,9 @@ library(tidyr)
 library(readxl)
 library(janitor)
 
+setwd("C:\\Users\\cesar\\OneDrive\\Documentos\\GitHub\\economia_chile")
+
+
 source("funciones.R")
 
 
