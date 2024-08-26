@@ -3,7 +3,11 @@ library(rvest)
 library(stringr)
 library(tidyr)
 library(ggplot2)
+#install.packages("thematic")
+#install.packages("htmltools")
+
 thematic::thematic_on()
+setwd("C:\\Users\\cesar\\OneDrive\\Documentos\\GitHub\\economia_chile")
 
 source("funciones.R")
 
