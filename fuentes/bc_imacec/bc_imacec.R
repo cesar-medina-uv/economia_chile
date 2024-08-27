@@ -1,5 +1,14 @@
 # https://si3.bcentral.cl/Siete/ES/Siete/Cuadro/CAP_ESTADIST_MACRO/MN_EST_MACRO_IV/PEM_ACTyDDA_IMACEC_2_2018/637807927445790326
 # Principales Estadísticas Macro > Actividad y demanda > Indicadores de coyuntura > Imacec
+library(rvest)
+library(dplyr)
+library(readxl)
+library(lubridate)
+library(ggplot2)
+library(arrow)
+#install.packages("arrow")
+
+
 
 url = "https://si3.bcentral.cl/Siete/ES/Siete/Cuadro/CAP_ESTADIST_MACRO/MN_EST_MACRO_IV/PEM_ACTyDDA_IMACEC_2_2018/637807927445790326"
 
@@ -8,7 +17,7 @@ session(url) |>
   html_table()
 
 
-datos_imacec <- fs::dir_info("bc_imacec") |> 
+datos_imacec <- fs::dir_info("C:\\Users\\cesar\\OneDrive\\Documentos\\GitHub\\economia_chile\\fuentes\\bc_imacec") |> 
   filter(str_detect(path, "xls")) |> 
   slice_max(birth_time)
 
@@ -43,4 +52,5 @@ imacec |>
   theme(legend.position = "bottom")
 
 # guardar ----
-arrow::write_parquet(imacec, "resultados/bc_imacec.parquet")
+arrow::write_parquet(imacec, "C:\\Users\\cesar\\OneDrive\\Documentos\\GitHub\\economia_chile\\fuentes\\bc_imacec\\bc_imacec.parquet")
+
