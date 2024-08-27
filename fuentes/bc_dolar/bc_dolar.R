@@ -44,4 +44,5 @@ dolar |>
   theme(legend.position = "bottom")
 
 # guardar ----
-arrow::write_parquet(dolar, "resultados/bc_dolar.parquet")
+arrow::write_parquet(dolar, "bc_dolar/bc_dolar.parquet")
+arrow::write_parquet(dolar, "C:\\Users\\cesar\\OneDrive\\Documentos\\GitHub\\economia_chile\\fuentes\\bc_dolar\\bc_dolar.parquet")
