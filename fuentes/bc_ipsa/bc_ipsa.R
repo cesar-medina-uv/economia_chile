@@ -1,7 +1,8 @@
 # https://si3.bcentral.cl/Siete/ES/Siete/Cuadro/CAP_ESTADIST_MACRO/MN_EST_MACRO_IV/PEM_INDBUR/PEM_INDBUR
 # Principales Estadísticas Macro > Tasa de interés y estadísticas monetarias > Indicadores bursátiles
 
-datos_ipsa <- fs::dir_info("bc_ipsa") |> 
+# Usa la ruta completa para acceder a la carpeta bc_ipsa
+datos_ipsa <- fs::dir_info("C:\\Users\\cesar\\OneDrive\\Documentos\\GitHub\\economia_chile\\fuentes\\bc_ipsa") |> 
   filter(str_detect(path, "xls")) |> 
   slice_max(birth_time)
 
@@ -28,4 +29,4 @@ ipsa |>
   theme(legend.position = "bottom")
 
 # guardar ----
-arrow::write_parquet(ipsa, "resultados/bc_ipsa.parquet")
+arrow::write_parquet(ipsa, "C:\\Users\\cesar\\OneDrive\\Documentos\\GitHub\\economia_chile\\fuentes\\bc_ipsa.parquet")
