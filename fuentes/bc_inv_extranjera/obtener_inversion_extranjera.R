@@ -5,10 +5,13 @@ library(readxl)
 library(janitor)
 library(tidyr)
 library(stringr)
+thematic::thematic_on()
 
+setwd("C:\\Users\\cesar\\OneDrive\\Documentos\\GitHub\\economia_chile")
 source("funciones.R")
 
 # obtener ----
+
 # descargar archivo
 url_inversion_extranjera = "https://si3.bcentral.cl/estadisticas/Principal1/excel/SE/BDP/Excel/Mensual/Cuenta_Financiera_categoria.xlsx"
 
@@ -19,6 +22,7 @@ download.file(url_inversion_extranjera,
 # cargar local              
 invext <- read_excel("otros/bc_inv_extranjera/Cuenta_Financiera_categoria.xlsx",
                      .name_repair = "unique_quiet")
+
 
 # limpieza ----
 
